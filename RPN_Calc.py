@@ -1,64 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Jul  1 16:28:11 2022
-
-@author: goharshoukat
 
 
 
-strs = '4 7 + 2 *'#5 2 % 3 4 + *'
-strs=strs.split()
-operators = ['+', '/', '-', '%', '*']
 
-
-def add(x, y):
-    return x + y
-def subtract(x, y):
-    return x - y
-def divide(x, y):
-    return x/y
-def mod(x, y):
-    return x%y
-def mult(x, y):
-    return x * y
-def operations(lst):
-    ops = {'+' : add, '-' : subtract, 
-           '/' : divide, '%' : mod,
-           '*' : mult}
-    x = int(lst[0])
-    y = int(lst[1])
-    oper = lst[2]
-    return ops.get(oper)(x, y)
-
-
-
-terms = {}
-def search_op(strs):
-    index = [0]
-    operators = ['+', '/', '-', '%', '*']
-    for i in range(len(strs)):
-        if strs[i] in operators:
-            index.append(i + 1)
-    return index
-
-index  = search_op(strs)
-
-j = 0
-
-for i in range(len(index) - 1):
-    terms[j] = strs[index[i]:index[i + 1]]
-    j = j + 1
-
-tmp = []
-for i, v in enumerate(terms):
-    if terms[i][0] not in operators:
-        tmp.append(operations(terms[i]))
-    else:
-        tmp.append(operations([tmp[v-2], tmp[v-1], terms[i][0]]))
-        
-        
-"""
 #all the possible operations are bunched up in here instead of nested if else
 
 
